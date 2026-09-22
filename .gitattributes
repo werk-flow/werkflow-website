@@ -1,0 +1,3 @@
+* text=auto eol=lf
+.agents/skills/frontend-design/** -text
+.claude/skills/frontend-design/** -text
