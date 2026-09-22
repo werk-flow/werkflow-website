@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This repository owns the future public website, campaign landing pages, and their supporting web functionality for werk-flow.app and www.werk-flow.app. The intended stack is Next.js App Router, TypeScript, Tailwind CSS, and Bun, deployed as a separate Next.js project on Vercel. The [scope](docs/scope.md) records the planned VSL, lead form, and possible booking flow. It currently contains only documentation and skills. No website framework, application, form, analytics integration, deployment project, or public page is implemented.
+This repository owns the future public website, campaign landing pages, and their supporting web functionality for werk-flow.app and www.werk-flow.app. The intended stack is Next.js App Router, TypeScript, Tailwind CSS, and Bun, deployed as a separate Next.js project on Vercel. The [scope](docs/scope.md) records the planned VSL, lead form, and possible booking flow. One Next.js application at the repository root serves ten landing-page design studies: five from [astra](astra/README.md) under /astra and five from [opus](opus/README.md) under /opus, with a shared overview and switcher in [app](app). Each model's page code, stylesheet, and assets stay in its own directory. Their forms are local previews. No analytics integration, live submission service, domain, or public page is active.
 
 Tamay owns product and offer work. John owns marketing, sales, and customer work. Read [website scope](docs/scope.md) and the shared business sources before creating pages.
 

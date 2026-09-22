@@ -1,0 +1,515 @@
+/* ===========================================================================
+   Study 3 — Technische Zeichnung
+   The page is a drafting sheet: margin rule, sheet marks, dimension lines and a
+   title block. Hairlines and monospace are the subject's own conventions here,
+   not decoration. Scoped to .d3.
+   =========================================================================== */
+
+.d3 {
+  min-height: 100dvh;
+  --sheet: #e8ecef;
+  --sheet-2: #f2f5f6;
+  --ink: #16202a;
+  --ink-2: #4b5d6b;
+  --hair: #9fb0bc;
+  --hair-soft: #c3ced5;
+  --deep: #3e3659;
+  --orange: #ff7900;
+
+  background: var(--sheet);
+  color: var(--ink);
+  font-family: var(--font-d3-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  overflow-x: clip;
+}
+
+.d3 *,
+.d3 *::before,
+.d3 *::after {
+  box-sizing: border-box;
+}
+
+.d3 h1,
+.d3 h2,
+.d3 h3,
+.d3 p,
+.d3 ul,
+.d3 ol,
+.d3 figure,
+.d3 table {
+  margin: 0;
+}
+
+.d3 ul,
+.d3 ol {
+  padding: 0;
+  list-style: none;
+}
+
+.d3 a {
+  color: inherit;
+}
+
+.d3 :focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 3px;
+}
+
+.d3__sheet {
+  width: 100%;
+  max-width: 78rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+@media (min-width: 62rem) {
+  .d3__sheet {
+    padding: 0 3.5rem 0 5.5rem;
+    /* the margin rule of a drawing sheet */
+    background-image: linear-gradient(to right, var(--hair) 0 1px, transparent 1px);
+    background-position: 3.5rem 0;
+    background-repeat: repeat-y;
+    background-size: 1px 100%;
+  }
+}
+
+.d3__mono {
+  font-family: var(--font-d3-mono), ui-monospace, monospace;
+}
+
+/* --- header --------------------------------------------------------------- */
+
+.d3__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem 0 1.25rem;
+  border-bottom: 1px solid var(--hair);
+}
+
+.d3__logo {
+  height: 1.75rem;
+  width: auto;
+}
+
+.d3__toplink {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 2px solid var(--orange);
+  padding-bottom: 2px;
+}
+
+/* --- sheet marks ---------------------------------------------------------- */
+
+.d3__mark {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0 0;
+  font-family: var(--font-d3-mono), ui-monospace, monospace;
+  font-size: 0.75rem;
+  color: var(--ink-2);
+}
+
+/* --- hero ----------------------------------------------------------------- */
+
+.d3__hero {
+  padding: 1.5rem 0 3rem;
+}
+
+.d3__h1 {
+  font-size: clamp(2.25rem, 5.4vw, 3.75rem);
+  line-height: 1.04;
+  letter-spacing: -0.028em;
+  font-weight: 600;
+  max-width: 21ch;
+  text-wrap: balance;
+}
+
+.d3__lede {
+  margin-top: 1.25rem;
+  max-width: 58ch;
+  font-size: 1.125rem;
+  color: var(--ink-2);
+}
+
+.d3__actions {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.d3__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.25rem;
+  padding: 0 1.75rem;
+  border: 0;
+  border-radius: 0;
+  background: var(--orange);
+  color: #1a1523;
+  font: inherit;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.d3__cta:hover {
+  background: #e96f00;
+}
+
+.d3__quiet {
+  font-size: 0.9375rem;
+  color: var(--ink-2);
+  text-decoration: none;
+  border-bottom: 1px solid var(--hair);
+  padding-bottom: 2px;
+}
+
+.d3__quiet:hover {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+
+/* --- the drawing ---------------------------------------------------------- */
+
+.d3__drawing {
+  margin-top: 2.5rem;
+  border: 1px solid var(--hair);
+  background: var(--sheet-2);
+  background-image:
+    linear-gradient(to right, rgba(22, 32, 42, 0.05) 0 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(22, 32, 42, 0.05) 0 1px, transparent 1px);
+  background-size: 1.5rem 1.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+.d3__drawing text {
+  font-family: var(--font-d3-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+.d3__drawing .d3-svgmono,
+.d3__drawing .d3-svgmono text {
+  font-family: var(--font-d3-mono), ui-monospace, monospace;
+}
+
+.d3__drawing svg {
+  display: block;
+  width: 100%;
+  min-width: 46rem;
+  height: auto;
+}
+
+.d3__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: 0.875rem;
+  font-family: var(--font-d3-mono), ui-monospace, monospace;
+  font-size: 0.75rem;
+  color: var(--ink-2);
+}
+
+.d3__legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4375rem;
+}
+
+.d3__swatch {
+  width: 0.625rem;
+  height: 0.625rem;
+  background: var(--orange);
+}
+
+.d3__swatch--deep {
+  background: var(--deep);
+}
+
+/* --- sections ------------------------------------------------------------- */
+
+.d3__section {
+  padding: 3.5rem 0;
+  border-top: 1px solid var(--hair);
+}
+
+.d3__h2 {
+  font-size: clamp(1.625rem, 3.2vw, 2.25rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  max-width: 24ch;
+}
+
+.d3__sub {
+  margin-top: 0.875rem;
+  max-width: 62ch;
+  color: var(--ink-2);
+}
+
+/* parts list — the product inventory as a Stückliste */
+.d3__partswrap {
+  margin-top: 2rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+}
+
+.d3__parts {
+  width: 100%;
+  min-width: 34rem;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.d3__parts caption {
+  text-align: left;
+  font-family: var(--font-d3-mono), ui-monospace, monospace;
+  font-size: 0.75rem;
+  color: var(--ink-2);
+  padding-bottom: 0.5rem;
+}
+
+.d3__parts th,
+.d3__parts td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.625rem 0.75rem;
+  border: 1px solid var(--hair-soft);
+}
+
+.d3__parts thead th {
+  font-family: var(--font-d3-mono), ui-monospace, monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--ink-2);
+  background: #dfe5e9;
+  border-color: var(--hair);
+}
+
+.d3__parts td:first-child {
+  font-family: var(--font-d3-mono), ui-monospace, monospace;
+  width: 3.5rem;
+  color: var(--ink-2);
+}
+
+.d3__parts td:nth-child(2) {
+  font-weight: 600;
+}
+
+@media (min-width: 52rem) {
+  .d3__parts td:nth-child(2) {
+    width: 16rem;
+  }
+}
+
+.d3__parts tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.d3__state {
+  font-family: var(--font-d3-mono), ui-monospace, monospace;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.d3__state--planned {
+  color: #ffffff;
+  background: var(--deep);
+  padding: 0.125rem 0.375rem;
+}
+
+/* start schedule */
+.d3__steps {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 52rem) {
+  .d3__steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+  }
+}
+
+.d3__step {
+  border-top: 2px solid var(--deep);
+  padding-top: 1rem;
+}
+
+.d3__step-when {
+  font-family: var(--font-d3-mono), ui-monospace, monospace;
+  font-size: 0.8125rem;
+  color: var(--deep);
+}
+
+.d3__step h3 {
+  margin-top: 0.375rem;
+  font-size: 1.1875rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.d3__step p {
+  margin-top: 0.375rem;
+  color: var(--ink-2);
+}
+
+/* --- contact -------------------------------------------------------------- */
+
+.d3__contact {
+  display: grid;
+  gap: 2.5rem;
+}
+
+@media (min-width: 58rem) {
+  .d3__contact {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 25rem);
+    gap: 4rem;
+    align-items: start;
+  }
+}
+
+.d3__status {
+  margin-top: 1.25rem;
+  max-width: 48ch;
+  color: var(--ink-2);
+  border-left: 3px solid var(--orange);
+  padding-left: 1rem;
+}
+
+.d3__status strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.d3__form {
+  background: var(--sheet-2);
+  border: 1px solid var(--hair);
+  padding: 1.5rem;
+}
+
+.d3__field {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.d3__field > span {
+  display: block;
+  font-family: var(--font-d3-mono), ui-monospace, monospace;
+  font-size: 0.75rem;
+  color: var(--ink-2);
+  margin-bottom: 0.3125rem;
+}
+
+.d3__field input,
+.d3__field select,
+.d3__field textarea {
+  width: 100%;
+  font: inherit;
+  font-size: 1rem;
+  color: var(--ink);
+  background: #ffffff;
+  border: 1px solid var(--hair);
+  border-radius: 0;
+  padding: 0.625rem 0.6875rem;
+  min-height: 2.75rem;
+}
+
+.d3__field textarea {
+  min-height: 5.5rem;
+  resize: vertical;
+}
+
+.d3__field input:focus,
+.d3__field select:focus,
+.d3__field textarea:focus {
+  outline: 2px solid var(--orange);
+  outline-offset: 1px;
+}
+
+.d3__two {
+  display: grid;
+}
+
+@media (min-width: 26rem) {
+  .d3__two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 1rem;
+  }
+}
+
+.d3__form .d3__cta {
+  width: 100%;
+  margin-top: 0.25rem;
+}
+
+.d3__formnote {
+  margin-top: 0.75rem;
+  font-size: 0.8125rem;
+  color: var(--ink-2);
+}
+
+/* --- title block ---------------------------------------------------------- */
+
+.d3__block {
+  margin: 2rem 0 5.5rem;
+  border: 1px solid var(--ink);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  font-family: var(--font-d3-mono), ui-monospace, monospace;
+  font-size: 0.75rem;
+}
+
+@media (min-width: 46rem) {
+  .d3__block {
+    grid-template-columns: 2fr repeat(3, 1fr);
+  }
+}
+
+.d3__block > div {
+  padding: 0.625rem 0.75rem;
+  border-right: 1px solid var(--hair);
+  border-bottom: 1px solid var(--hair);
+}
+
+.d3__block dt {
+  color: var(--ink-2);
+}
+
+.d3__block dd {
+  margin: 0.25rem 0 0;
+  font-size: 0.875rem;
+  color: var(--ink);
+}
+
+.d3__block nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.25rem;
+}
+
+.d3__block a {
+  text-decoration: none;
+  border-bottom: 1px solid var(--hair);
+}
+
+.d3__block a:hover {
+  border-bottom-color: var(--ink);
+}
+
+/* On a phone the header link crowds the logo; the hero action sits right below it. */
+@media (max-width: 30rem) {
+  .d3__logo { height: 1.5rem; }
+  .d3__toplink { display: none; }
+}

@@ -1,0 +1,80 @@
+@import 'tailwindcss' source(none);
+
+@source '.';
+
+/* ---------------------------------------------------------------------------
+   Shell stylesheet. It owns only the page frame and the overview; the design
+   sets bring their own scoped stylesheets (`.astra`, `.d1` … `.d5`) so that no
+   design can style another one.
+
+   WerkFlow brand constants come from werkflow-app/app/globals.css: orange
+   #ff7900 is the only attention colour, purple stays a soft undertone outside
+   the logo SVGs, and orange and purple never sit on each other.
+   --------------------------------------------------------------------------- */
+
+:root {
+  --wf-orange: #ff7900;
+  --wf-purple: #6f5f94;
+  --wf-purple-deep: #3e3659;
+  --wf-ink: #1a1523;
+  --wf-muted: #5f5967;
+  --wf-border: #e6e4ea;
+  --wf-paper: #fafafb;
+
+  color-scheme: light;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--wf-paper);
+  color: var(--wf-ink);
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: #d8d2e4;
+  color: var(--wf-ink);
+}
+
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 20px;
+  z-index: 2147483001;
+  background: var(--wf-orange);
+  color: var(--wf-ink);
+  font-family: ui-sans-serif, system-ui, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 14px;
+}
+
+.skip-link:focus {
+  top: 10px;
+}
+
+/* The overview and the switcher are review chrome, not a design, so they use a
+   plain system stack rather than either design set's typefaces. */
+.shell {
+  font-family: ui-sans-serif, system-ui, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif;
+}
+
+@media print {
+  .gnav {
+    display: none;
+  }
+}

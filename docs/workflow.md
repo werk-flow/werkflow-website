@@ -25,3 +25,7 @@ Commits and pushes require the user's request. Publication also requires authori
 When hosting is introduced, document this website's own preview and production mapping here. The app's partner-preview branch, Supabase projects, and release procedure are not inherited automatically.
 
 Record the business revision and product-release evidence used by a published page. After an offer or relevant product change, review affected live pages against those sources. This is an editorial responsibility until a real check is implemented.
+
+## Local design checks
+
+The root application owns every route. Run bun run lint, bun run typecheck, and bun run build from the repository root; there is no second application to build. The [Astra README](../astra/README.md) and the [Opus README](../opus/README.md) own their own design decisions, claim boundaries, and review notes. Review the affected routes on desktop and mobile, including the shared switcher, dialogs, local form validation, workflow tabs, and FAQ. Every enquiry flow is a local simulation and has no submission service.

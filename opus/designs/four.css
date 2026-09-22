@@ -1,0 +1,468 @@
+/* ===========================================================================
+   Study 4 — Morgens um sechs
+   One column, one voice: the owner's working day. Clock times hang in the left
+   margin because the day really is a sequence. The page darkens at the hour
+   where the second working day starts, and lifts again afterwards.
+   Scoped to .d4.
+   =========================================================================== */
+
+.d4 {
+  min-height: 100dvh;
+  --page: #f7f6f8;
+  --ink: #1a1523;
+  --muted: #5f5967;
+  --hair: #dedbe4;
+  --night: #3e3659;
+  --night-2: #322b49;
+  --orange: #ff7900;
+  --orange-text: #984200;
+
+  background: var(--page);
+  color: var(--ink);
+  font-family: var(--font-d4-body), ui-sans-serif, system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  overflow-x: clip;
+}
+
+.d4 *,
+.d4 *::before,
+.d4 *::after {
+  box-sizing: border-box;
+}
+
+.d4 h1,
+.d4 h2,
+.d4 h3,
+.d4 p,
+.d4 ul,
+.d4 ol {
+  margin: 0;
+}
+
+.d4 ul,
+.d4 ol {
+  padding: 0;
+  list-style: none;
+}
+
+.d4 a {
+  color: inherit;
+}
+
+.d4 :focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 3px;
+}
+
+.d4__col {
+  width: 100%;
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.d4__slab {
+  font-family: var(--font-d4-slab), Georgia, serif;
+}
+
+/* --- header --------------------------------------------------------------- */
+
+.d4__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.75rem 0 0;
+}
+
+.d4__logo {
+  height: 1.75rem;
+  width: auto;
+}
+
+.d4__toplink {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid var(--orange);
+  padding-bottom: 2px;
+}
+
+.d4__toplink:hover {
+  color: var(--orange-text);
+}
+
+/* --- hero ----------------------------------------------------------------- */
+
+.d4__hero {
+  padding: 4.5rem 0 3.5rem;
+}
+
+.d4__h1 {
+  font-family: var(--font-d4-slab), Georgia, serif;
+  font-size: clamp(2.25rem, 5.6vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.d4__lede {
+  margin-top: 1.5rem;
+  max-width: 44ch;
+  font-size: 1.1875rem;
+  color: var(--muted);
+}
+
+.d4__actions {
+  margin-top: 2.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.d4__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.25rem;
+  padding: 0 1.75rem;
+  border: 0;
+  border-radius: 4px;
+  background: var(--orange);
+  color: #1a1523;
+  font-family: var(--font-d4-body), ui-sans-serif, sans-serif;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.d4__cta:hover {
+  background: #e96f00;
+}
+
+.d4__quiet {
+  font-size: 0.9375rem;
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid var(--hair);
+  padding-bottom: 2px;
+}
+
+.d4__quiet:hover {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+
+/* --- the day -------------------------------------------------------------- */
+
+.d4__day {
+  padding-bottom: 1rem;
+}
+
+.d4__hour {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.25rem;
+  padding: 1.75rem 0;
+  border-top: 1px solid var(--hair);
+}
+
+@media (min-width: 40rem) {
+  .d4__hour {
+    grid-template-columns: 6.5rem minmax(0, 1fr);
+    gap: 2rem;
+  }
+}
+
+.d4__time {
+  font-family: var(--font-d4-slab), Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  line-height: 1.2;
+}
+
+.d4__scene h3 {
+  font-family: var(--font-d4-slab), Georgia, serif;
+  font-size: 1.375rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.d4__scene p {
+  margin-top: 0.5rem;
+  max-width: 48ch;
+  color: var(--muted);
+}
+
+.d4__fix {
+  margin-top: 0.875rem;
+  padding-left: 0.875rem;
+  border-left: 2px solid #c6bfd6;
+  font-size: 0.9375rem;
+  color: var(--night);
+}
+
+/* the hour where the second working day begins */
+.d4__night {
+  background: var(--night);
+  color: #ece9f0;
+  padding: 3.5rem 0;
+  margin-top: 1rem;
+}
+
+.d4__night .d4__time {
+  color: #b9afd6;
+}
+
+.d4__night .d4__hour {
+  border-top: 0;
+  padding: 0;
+}
+
+.d4__night h2 {
+  font-family: var(--font-d4-slab), Georgia, serif;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  max-width: 22ch;
+}
+
+.d4__night p {
+  margin-top: 1rem;
+  max-width: 48ch;
+  color: #c7c1d6;
+}
+
+.d4__night-mark {
+  display: inline-block;
+  width: 2.5rem;
+  height: 4px;
+  background: var(--orange);
+  margin-bottom: 1.5rem;
+}
+
+/* --- the turn ------------------------------------------------------------- */
+
+.d4__turn {
+  padding: 4.5rem 0 1rem;
+}
+
+.d4__h2 {
+  font-family: var(--font-d4-slab), Georgia, serif;
+  font-size: clamp(1.875rem, 4.2vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.018em;
+  max-width: 20ch;
+  text-wrap: balance;
+}
+
+.d4__sub {
+  margin-top: 1.125rem;
+  max-width: 50ch;
+  color: var(--muted);
+}
+
+.d4__steps {
+  margin-top: 2.5rem;
+  display: grid;
+  gap: 1.75rem;
+}
+
+.d4__step {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.25rem;
+}
+
+@media (min-width: 40rem) {
+  .d4__step {
+    grid-template-columns: 6.5rem minmax(0, 1fr);
+    gap: 2rem;
+  }
+}
+
+.d4__step-when {
+  font-family: var(--font-d4-slab), Georgia, serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--night);
+  line-height: 1.5;
+}
+
+.d4__step h3 {
+  font-family: var(--font-d4-slab), Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.d4__step p {
+  margin-top: 0.375rem;
+  max-width: 48ch;
+  color: var(--muted);
+}
+
+/* --- what it holds -------------------------------------------------------- */
+
+.d4__holds {
+  margin-top: 2rem;
+  border-top: 1px solid var(--hair);
+}
+
+.d4__holds > li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: baseline;
+  padding: 0.8125rem 0;
+  border-bottom: 1px solid var(--hair);
+}
+
+.d4__holds strong {
+  font-weight: 700;
+}
+
+.d4__holds span {
+  display: block;
+  margin-top: 0.125rem;
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+
+.d4__tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--night);
+  background: #ece9f2;
+  border-radius: 3px;
+  padding: 0.1875rem 0.5rem;
+  white-space: nowrap;
+}
+
+/* --- ask ------------------------------------------------------------------ */
+
+.d4__ask {
+  padding: 4rem 0 5.5rem;
+}
+
+.d4__status {
+  margin-top: 1.25rem;
+  max-width: 48ch;
+  color: var(--muted);
+}
+
+.d4__status strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.d4__form {
+  margin-top: 2.25rem;
+  background: #ffffff;
+  border: 1px solid var(--hair);
+  border-radius: 6px;
+  padding: 1.75rem;
+}
+
+.d4__field {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.d4__field > span {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-bottom: 0.375rem;
+}
+
+.d4__field input,
+.d4__field select,
+.d4__field textarea {
+  width: 100%;
+  font: inherit;
+  font-size: 1rem;
+  color: var(--ink);
+  background: #f8f7fa;
+  border: 1px solid var(--hair);
+  border-radius: 4px;
+  padding: 0.6875rem 0.75rem;
+  min-height: 2.875rem;
+}
+
+.d4__field textarea {
+  min-height: 6rem;
+  resize: vertical;
+}
+
+.d4__field input:focus,
+.d4__field select:focus,
+.d4__field textarea:focus {
+  outline: 2px solid var(--orange);
+  outline-offset: 1px;
+  background: #ffffff;
+}
+
+.d4__two {
+  display: grid;
+}
+
+@media (min-width: 26rem) {
+  .d4__two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 1rem;
+  }
+}
+
+.d4__form .d4__cta {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.d4__formnote {
+  margin-top: 0.875rem;
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+
+/* --- footer --------------------------------------------------------------- */
+
+.d4__foot {
+  border-top: 1px solid var(--hair);
+  padding: 2rem 0 5.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.d4__foot nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.d4__foot a {
+  text-decoration: none;
+}
+
+.d4__foot a:hover {
+  color: var(--ink);
+  text-decoration: underline;
+}
+
+/* On a phone the header link crowds the logo; the hero action sits right below it. */
+@media (max-width: 30rem) {
+  .d4__logo { height: 1.5rem; }
+  .d4__toplink { display: none; }
+}
