@@ -1,5 +1,5 @@
 /* ===========================================================================
-   The one switcher. It sits on every page, lists all ten designs grouped by the
+   The one switcher. It sits on every page, lists all fifteen designs grouped by the
    model that built them, and belongs to neither design set: it is deliberately
    neutral, and it never uses the brand orange, which each design reserves for
    its own action.
@@ -119,6 +119,11 @@
   color: #3e3659;
 }
 
+.gnav__chip[data-model='fable'] {
+  background: #f3f1f6;
+  color: #1a1523;
+}
+
 .gnav__model {
   font-weight: 600;
 }
@@ -168,7 +173,7 @@
 
 @media (min-width: 38rem) {
   .gnav__groups {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.5rem;
   }
 }

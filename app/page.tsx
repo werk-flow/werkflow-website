@@ -6,10 +6,10 @@ export default function OverviewPage() {
     <main className="shell mx-auto max-w-3xl px-6 py-20 pb-40" id="main">
       <p className="text-sm text-[#5f5967]">Interne Studien, nicht veröffentlicht</p>
       <h1 className="mt-3 text-balance text-3xl font-semibold tracking-tight text-[#1a1523] sm:text-4xl">
-        Zehn Entwürfe für die WerkFlow-Seite
+        Fünfzehn Entwürfe für die WerkFlow-Seite
       </h1>
       <p className="mt-4 max-w-xl leading-relaxed text-[#5f5967]">
-        Zwei Modelle haben je fünf vollständige Landingpages gebaut, unabhängig
+        Drei Modelle haben je fünf vollständige Landingpages gebaut, unabhängig
         voneinander und mit demselben Ziel: ein Gespräch. Hier stehen sie
         nebeneinander. Unten können Sie jederzeit wechseln.
       </p>
@@ -64,8 +64,9 @@ export default function OverviewPage() {
         </p>
         <p className="mt-3">
           Der Quellcode liegt getrennt nach Modell in{' '}
-          <span className="text-[#1a1523]">astra/</span> und{' '}
-          <span className="text-[#1a1523]">opus/</span>.
+          <span className="text-[#1a1523]">astra/</span>,{' '}
+          <span className="text-[#1a1523]">opus/</span> und{' '}
+          <span className="text-[#1a1523]">fable/</span>.
         </p>
       </div>
     </main>

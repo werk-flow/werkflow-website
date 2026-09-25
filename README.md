@@ -12,16 +12,17 @@ bun install
 bun run dev
 ```
 
-Ten landing-page design studies run inside it, five per model, each set keeping its own page code, stylesheet,
+Fifteen landing-page design studies run inside it, five per model, each set keeping its own page code, stylesheet,
 and assets:
 
 | Routes | Source | Assets |
 | --- | --- | --- |
 | `/astra/one` … `/astra/five` | [astra](astra/README.md) | `public/astra` |
 | `/opus/one` … `/opus/five` | [opus](opus/README.md) | shared brand files in `public` |
+| `/fable/one` … `/fable/five` | [fable](fable/README.md) | shared brand files in `public` |
 
-`/` lists all ten. A switcher sits on every page and moves between any two of them; keys `1`–`5` change the
-design, `A` and `O` change the model, `0` opens the overview. Hosting, domains, and public launch remain
+`/` lists all fifteen. A switcher sits on every page and moves between any two of them; keys `1`–`5` change the
+design, `A`, `O` and `F` change the model, `0` opens the overview. Hosting, domains, and public launch remain
 separate tasks.
 
 Origin is [werk-flow/werkflow-website](https://github.com/werk-flow/werkflow-website). Git publication is separate from deploying a website or connecting domains.

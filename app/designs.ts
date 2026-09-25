@@ -1,5 +1,7 @@
+import { fableDesigns } from '@/fable/designs'
+
 export type DesignSlug = 'one' | 'two' | 'three' | 'four' | 'five'
-export type ModelKey = 'astra' | 'opus'
+export type ModelKey = 'astra' | 'opus' | 'fable'
 
 export type Design = {
   slug: DesignSlug
@@ -94,6 +96,13 @@ export const models: Model[] = [
         swatch: 'linear-gradient(110deg, #fafafb 50%, #6f5f94 50%)',
       },
     ],
+  },
+  {
+    key: 'fable',
+    name: 'Fable',
+    note: 'Fünf Entwürfe, gebaut von Fable.',
+    // The fable set keeps its registry beside its code; the shell reads it.
+    designs: fableDesigns,
   },
 ]
 

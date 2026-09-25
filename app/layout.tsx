@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     template: '%s',
   },
   description:
-    'Zehn Landingpage-Entwürfe für WerkFlow, je fünf von Astra und von Opus. Interne Studien, keine veröffentlichte Seite.',
+    'Fünfzehn Landingpage-Entwürfe für WerkFlow, je fünf von Astra, Opus und Fable. Interne Studien, keine veröffentlichte Seite.',
   icons: { icon: '/favicon.svg' },
   robots: { index: false, follow: false },
 }

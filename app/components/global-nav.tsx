@@ -7,12 +7,12 @@ import { designSlugs, models, type ModelKey } from '../designs'
 import './global-nav.css'
 
 /**
- * The single switcher for all ten designs. It sits above every page, groups the
+ * The single switcher for all fifteen designs. It sits above every page, groups the
  * designs by the model that built them, and is not part of any design: it keeps
  * its own neutral chrome and never uses the brand orange.
  *
- * Keys: 1–5 pick a design inside the current set, A and O jump between the two
- * sets at the same position, 0 opens the overview.
+ * Keys: 1–5 pick a design inside the current set, A, O and F jump between the
+ * three sets at the same position, 0 opens the overview.
  */
 export function GlobalNav() {
   const pathname = usePathname()
@@ -47,8 +47,8 @@ export function GlobalNav() {
         router.push('/')
         return
       }
-      if (key === 'a' || key === 'o') {
-        const nextModel: ModelKey = key === 'a' ? 'astra' : 'opus'
+      if (key === 'a' || key === 'o' || key === 'f') {
+        const nextModel: ModelKey = key === 'a' ? 'astra' : key === 'o' ? 'opus' : 'fable'
         const position = index >= 0 ? index : 0
         router.push(`/${nextModel}/${designSlugs[position]}`)
         return
@@ -68,7 +68,7 @@ export function GlobalNav() {
       {open ? (
         <div className="gnav__panel" id={panelId}>
           <p className="gnav__title">
-            Zehn Entwürfe für die WerkFlow-Seite, je fünf pro Modell.
+            Fünfzehn Entwürfe für die WerkFlow-Seite, je fünf pro Modell.
           </p>
           <div className="gnav__groups">
             {models.map((model) => (
@@ -107,8 +107,8 @@ export function GlobalNav() {
             ))}
           </div>
           <p className="gnav__hint">
-            <kbd>1</kbd>–<kbd>5</kbd> wechselt den Entwurf, <kbd>A</kbd> und{' '}
-            <kbd>O</kbd> wechseln das Modell, <kbd>0</kbd> zeigt alle.
+            <kbd>1</kbd>–<kbd>5</kbd> wechselt den Entwurf, <kbd>A</kbd>, <kbd>O</kbd> und{' '}
+            <kbd>F</kbd> wechseln das Modell, <kbd>0</kbd> zeigt alle.
           </p>
         </div>
       ) : null}

@@ -7,8 +7,8 @@ export default function NotFound() {
         Diese Seite gibt es nicht
       </h1>
       <p className="mt-3 text-[#5f5967]">
-        Die Entwürfe liegen unter /astra/one bis /astra/five und /opus/one bis
-        /opus/five.
+        Die Entwürfe liegen unter /astra/one bis /astra/five, /opus/one bis
+        /opus/five und /fable/one bis /fable/five.
       </p>
       <Link
         href="/"
