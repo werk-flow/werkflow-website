@@ -46,4 +46,4 @@ The website's frontend-design skill is an upstream dependency with its license a
 
 AGENTS.md is canonical here. CLAUDE.md contains only @AGENTS.md and imports this file, matching the app convention. Keep repository-specific instructions here; do not copy the app's full engineering rule set into the website.
 
-Prefer Bun when executable tooling is eventually introduced. Ordinary Git is sufficient for this foundation. No application credentials or production customer data belong here.
+Use Bun for the existing root application; its README owns the current commands. Ordinary Git is sufficient for this foundation. No application credentials or production customer data belong here.

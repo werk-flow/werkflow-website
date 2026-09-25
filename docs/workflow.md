@@ -1,6 +1,6 @@
 # Website session workflow
 
-Status: living — last reviewed 2026-09-22
+Status: living — last reviewed 2026-09-25
 
 ## Start a session
 
@@ -14,7 +14,7 @@ If a sibling is busy, do not pull, switch, stash, or reset it. Read a completed 
 
 For documentation and skills, follow the [shared review procedure](../../werkflow-business/docs/workflow.md#review-a-change). Check this repo's doc index, relative links and fragments, both skill mirrors, shared-skill parity with business, and the CLAUDE.md import of the local AGENTS.md.
 
-For future page implementation, add the actual build and browser checks once the stack exists. Review each page's audience, offer revision, claims, German copy, reading level, accessible interaction, and mobile layout. Do not invent test commands or claim that a preview passed when no site exists.
+For page implementation, use the root application checks described in [Local design checks](#local-design-checks). Review each page's audience, offer revision, claims, German copy, reading level, accessible interaction, and mobile layout. Do not invent test commands or treat an untested design study as an accepted or deployed page.
 
 Finish with a deletion pass. Remove unused files, duplicate facts, speculative scaffolding, and copy that does not help the reader act.
 
