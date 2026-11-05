@@ -20,7 +20,7 @@ Finish with a deletion pass. Remove unused files, duplicate facts, speculative s
 
 ## Publish separately from the app
 
-Commits and pushes require the user's request. Publication also requires authorization for the relevant hosting action. A separate Vercel project using Next.js is intended, with werk-flow.app and www.werk-flow.app. No Vercel project, DNS change, or deployment configuration is created by this foundation. GitHub publication alone does not implement or launch the site.
+Commit and push on your own once the change is not risky. Publication requires authorization for the relevant hosting action. A separate Vercel project using Next.js is intended, with werk-flow.app and www.werk-flow.app. No Vercel project, DNS change, or deployment configuration is created by this foundation. GitHub publication alone does not implement or launch the site.
 
 When hosting is introduced, document this website's own preview and production mapping here. The app's partner-preview branch, Supabase projects, and release procedure are not inherited automatically.
 
