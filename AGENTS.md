@@ -24,7 +24,7 @@ For a new machine, use the business [workspace setup](../werkflow-business/docs/
 
 Synchronize only a clean, idle checkout with a fast-forward-only pull. Preserve dirty or active work. If no remote is configured or access fails, say that remote freshness is unverified. Current app development must not be described as released product behavior.
 
-Keep the website's delivery workflow separate from the app's DEV and PROD workflow. Commit and push only when requested. Publishing pages, activating forms, adding tracking, changing DNS, and deploying require authorization for those actions.
+Keep the website's delivery workflow separate from the app's DEV and PROD workflow. Commit and push on your own once the change is not risky. Publishing pages, activating forms, adding tracking, changing DNS, and deploying require authorization for those actions.
 
 ## Content and design
 
